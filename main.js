@@ -12,6 +12,4 @@ if(isPhantomInstalled == true) {
 }
 document.body.appendChild(btn);}
 
-window.addEventListener('load', (event) => {
-  doTheRestOfTheStuff();
-});
+window.addEventListener('load', doTheRestOfTheStuff)
