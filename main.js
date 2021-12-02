@@ -1,14 +1,4 @@
 
-// This code creates a button. 
-var existCondition = setInterval(function() {
-  if (window.solana) {
-     console.log("Exists!");
-     clearInterval(existCondition);
-     doTheRestOfTheStuff()
-  } else {console.log("no")}
- }, 10); // check every 100ms
-
-
 function doTheRestOfTheStuff() {
 const isPhantomInstalled = window.solana && window.solana.isPhantom
 let btn = document.createElement("button");
@@ -21,3 +11,7 @@ if(isPhantomInstalled == true) {
   btn.innerHTML = "Phantom Wallet Not Present";
 }
 document.body.appendChild(btn);}
+
+window.addEventListener('load', (event) => {
+  doTheRestOfTheStuff();
+});
