@@ -10,9 +10,10 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
+import { Link } from 'react-router-dom';
 import logo from '../static/images/avatar/logo.jpg'
 
-const pages = ['About Us'];
+const pages = ['Home','About'];
 
 class ResponsiveAppBar extends React.Component {
     state = {
@@ -38,7 +39,7 @@ class ResponsiveAppBar extends React.Component {
                     component="div"
                     sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
                 >
-                    <Avatar alt="Remy Sharp" src={logo} />
+                    <Avatar alt="Logo" src={logo} />
                 </Typography>
 
                 <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -71,8 +72,13 @@ class ResponsiveAppBar extends React.Component {
                     }}
                     >
                     {pages.map((page) => (
-                        <MenuItem key={page} onClick={this.handleCloseNavMenu}>
-                        <Typography textAlign="center">{page}</Typography>
+                        <MenuItem
+                            key={page}
+                            onClick={this.handleCloseNavMenu}
+                            component={Link}
+                            to={page}
+                        >
+                            <Typography textAlign="center">{page}</Typography>
                         </MenuItem>
                     ))}
                     </Menu>
@@ -83,17 +89,19 @@ class ResponsiveAppBar extends React.Component {
                     component="div"
                     sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                 >
-                    <Avatar alt="Remy Sharp" src={logo} />
+                    <Avatar alt="Logo" src={logo} />
                 </Typography>
                 <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                     {pages.map((page) => (
-                    <Button
-                        key={page}
-                        onClick={this.handleCloseNavMenu}
-                        sx={{ my: 2, color: 'white', display: 'block' }}
-                    >
-                        {page}
-                    </Button>
+                        <Button
+                            key={page}
+                            component={Link}
+                            to={page}
+                            onClick={this.handleCloseNavMenu}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            {page}
+                        </Button>
                     ))}
                 </Box>
 

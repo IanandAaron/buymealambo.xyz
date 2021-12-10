@@ -1,23 +1,20 @@
 import React from 'react';
-import {Container,Grid,TextField,createTheme,ThemeProvider,CssBaseline} from '@mui/material'
-import Brightness3Icon from '@mui/icons-material/Brightness3'
-import Brightness7Icon from '@mui/icons-material/Brightness7'
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
-import ResponsiveAppBar from './components/ResponsiveAppBar'
-import GenerateButton from './components/GenerateButton';
+import {createTheme,ThemeProvider,CssBaseline} from '@mui/material';
+import {Routes,Route} from 'react-router-dom';
+import Brightness3Icon from '@mui/icons-material/Brightness3';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import ResponsiveAppBar from './components/ResponsiveAppBar';
+import Home from './components/Home';
+import About from './components/About'
 import './App.css';
 
 class App extends React.Component {
   state = {
     darkState: false,
     setDarkState: false,
-    buttonText: ''
   }
 
-  handleChange = (e) => this.setState({
-		buttonText: e.target.value
-	})
-  handleThemeChange = (e) => this.setState({
+  handleThemeChange = () => this.setState({
     darkState: (!this.state.darkState)
   })
 
@@ -33,22 +30,41 @@ class App extends React.Component {
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <div className="App">
-          <ResponsiveAppBar darkChecked={this.state.darkState} icon={icon} handler={this.handleThemeChange}/>
-          <div className="CreateButton" ref={el => (this.div = el)}>
-            <Container maxWidth="sm">
-              <Grid container spacing={0} alignItems="center" style={{ minHeight: '100vh' }}>
-                <Grid item xs={2}>
-                  <AccountBalanceWalletIcon />
-                </Grid>
-                <Grid item xs={5}>
-                  <TextField id="filled-basic" label="Button Text" variant="filled" onChange={this.handleChange} />
-                </Grid>
-                <Grid item xs={5}>
-                  <GenerateButton buttonText={this.state.buttonText}/>
-                </Grid>
-              </Grid>
-            </Container>
-          </div>
+          <ResponsiveAppBar
+              darkChecked={this.state.darkState}
+              icon={icon}
+              handler={this.handleThemeChange}
+          />
+          <Routes>
+            <Route
+              exact path="/"
+              element={
+                <Home
+                  icon={icon}
+                  darkState={this.state.darkState}
+                  handleChange={this.handleChange}
+                  handleThemeChange={this.handleThemeChange}
+                />
+              }>
+            </Route>
+            <Route
+              exact path="/Home"
+              element={
+                <Home
+                  icon={icon}
+                  darkState={this.state.darkState}
+                  handleChange={this.handleChange}
+                  handleThemeChange={this.handleThemeChange}
+                />
+              }>
+            </Route>
+            <Route
+              path="/About"
+              element={
+                <About />
+              }>
+            </Route>
+          </Routes>
         </div>
       </ThemeProvider>
     );
