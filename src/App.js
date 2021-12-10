@@ -23,7 +23,7 @@ class App extends React.Component {
 
   render() {
     const palletType = this.state.darkState ? "dark" : "light";
-    const icon = this.state.darkState ? <Brightness3Icon /> : <Brightness7Icon />;
+    const icon = this.state.darkState ? <Brightness7Icon /> : <Brightness3Icon />;
     const darkTheme = createTheme({
       palette: {
         mode: palletType,
