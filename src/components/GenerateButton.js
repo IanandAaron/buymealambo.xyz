@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server'
-import {Button,Modal,Typography,Box} from '@mui/material'
+import {Button,Modal,Typography,Box,useTheme,useMediaQuery} from '@mui/material'
 import CachedIcon from '@mui/icons-material/Cached'
 import { CopyBlock, dracula } from "react-code-blocks";
 
@@ -21,9 +21,15 @@ function GenerateButton(props) {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const code = <script src="https://cdn.jsdelivr.net/gh/isurewould/phantom-wallet-button@main/main.js" buttontext={props.buttonText}></script>
+
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const buttonProps = {
+        size: isSmallScreen ? "small" : "large"
+    };
     return (
         <div>
-        <Button variant="contained" startIcon={<CachedIcon />} onClick={handleOpen}>Generate Button</Button>
+        <Button {...buttonProps} variant="contained" startIcon={<CachedIcon />} onClick={handleOpen}>Generate Button</Button>
         <Modal
             open={open}
             onClose={handleClose}
