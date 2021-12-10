@@ -1,6 +1,8 @@
 import React from 'react';
 import {Container,Grid,TextField,createTheme,ThemeProvider,CssBaseline} from '@mui/material'
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import Brightness3Icon from '@mui/icons-material/Brightness3'
+import Brightness7Icon from '@mui/icons-material/Brightness7'
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import ResponsiveAppBar from './components/ResponsiveAppBar'
 import GenerateButton from './components/GenerateButton';
 import './App.css';
@@ -21,6 +23,7 @@ class App extends React.Component {
 
   render() {
     const palletType = this.state.darkState ? "dark" : "light";
+    const icon = this.state.darkState ? <Brightness3Icon /> : <Brightness7Icon />;
     const darkTheme = createTheme({
       palette: {
         mode: palletType,
@@ -30,7 +33,7 @@ class App extends React.Component {
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <div className="App">
-          <ResponsiveAppBar darkChecked={this.state.darkState} handler={this.handleThemeChange}/>
+          <ResponsiveAppBar darkChecked={this.state.darkState} icon={icon} handler={this.handleThemeChange}/>
           <div className="CreateButton" ref={el => (this.div = el)}>
             <Container maxWidth="sm">
               <Grid container spacing={0} alignItems="center" style={{ minHeight: '100vh' }}>
