@@ -10,7 +10,6 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
-import Switch from '@mui/material/Switch'
 import logo from '../static/images/avatar/logo.jpg'
 
 const pages = ['About Us'];
@@ -99,7 +98,14 @@ class ResponsiveAppBar extends React.Component {
                 </Box>
 
                 <Box sx={{ flexGrow: 0 }}>
-                    <Switch checked={this.props.darkChecked} onChange={this.props.handler} />
+                    <IconButton
+                        edge="end"
+                        color="inherit"
+                        aria-label="mode"
+                        onClick={this.props.handler}
+                    >
+                        {this.props.icon}
+                    </IconButton>
                 </Box>
                 </Toolbar>
             </Container>
