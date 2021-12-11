@@ -31,5 +31,3 @@ class ReactPicker extends React.Component {
 }
 
 export default ReactPicker;
-
-
