@@ -30,7 +30,7 @@ class ResponsiveAppBar extends React.Component {
 
     render() {
         return (
-            <AppBar position="static">
+            <AppBar position="fixed">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                 <Typography
