@@ -10,9 +10,12 @@ import Docs from './components/Docs'
 import './App.css';
 
 class App extends React.Component {
-  state = {
-    darkState: false,
-    setDarkState: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      darkState: false,
+      setDarkState: false,
+    }
   }
 
   handleThemeChange = () => this.setState({
