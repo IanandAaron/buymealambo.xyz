@@ -1,17 +1,28 @@
 import React from 'react';
 import { Container,Grid,TextField } from '@mui/material';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import TagFacesIcon from '@mui/icons-material/TagFaces';
 import GenerateButton from './GenerateButton';
+import Picker from './Picker'
 
 
 class Home extends React.Component {
     state = {
-        buttonText: ''
+        buttonText: '',
+        showPicker: false
     }
 
     handleChange = (e) => this.setState({
 		buttonText: e.target.value
 	})
+    
+
+
+    _onPickerButton = () => {
+        const currentState = this.state.showPicker
+        this.setState({
+            showPicker : !currentState
+        });
+    }
 
     render() {
         return (
@@ -20,7 +31,12 @@ class Home extends React.Component {
                     <Container maxWidth="sm">
                     <Grid container spacing={1} alignItems="center" style={{ minHeight: '100vh' }}>
                         <Grid item xs={2}>
-                        <AccountBalanceWalletIcon />
+                        <div>
+                        <button onClick={this._onPickerButton}>
+                        <TagFacesIcon />
+                        </button>
+                        {this.state.showPicker ? <Picker /> : null}
+                        </div>
                         </Grid>
                         <Grid item xs={5}>
                         <TextField
