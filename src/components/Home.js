@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container,Grid,TextField } from '@mui/material';
-import TagFacesIcon from '@mui/icons-material/TagFaces';
 import GenerateButton from './GenerateButton';
 import ReactPicker from './Picker'
 
