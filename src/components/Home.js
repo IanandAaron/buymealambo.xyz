@@ -2,13 +2,12 @@ import React from 'react';
 import { Container,Grid,TextField } from '@mui/material';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
 import GenerateButton from './GenerateButton';
-import Picker from './Picker'
+import ReactPicker from './Picker'
 
 
 class Home extends React.Component {
     state = {
-        buttonText: '',
-        showPicker: false
+        buttonText: ''
     }
 
     handleChange = (e) => this.setState({
@@ -17,12 +16,12 @@ class Home extends React.Component {
     
 
 
-    _onPickerButton = () => {
-        const currentState = this.state.showPicker
-        this.setState({
-            showPicker : !currentState
-        });
-    }
+    // _onPickerButton = () => {
+    //     const currentState = this.state.showPicker
+    //     this.setState({
+    //         showPicker : !currentState
+    //     });
+    // }
 
     render() {
         return (
@@ -31,12 +30,7 @@ class Home extends React.Component {
                     <Container maxWidth="sm">
                     <Grid container spacing={1} alignItems="center" style={{ minHeight: '100vh' }}>
                         <Grid item xs={2}>
-                        <div>
-                        <button onClick={this._onPickerButton}>
-                        <TagFacesIcon />
-                        </button>
-                        {this.state.showPicker ? <Picker /> : null}
-                        </div>
+      <ReactPicker />
                         </Grid>
                         <Grid item xs={5}>
                         <TextField
