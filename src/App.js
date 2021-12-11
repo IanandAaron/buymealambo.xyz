@@ -6,6 +6,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
 import Home from './components/Home';
 import About from './components/About'
+import Docs from './components/Docs'
 import './App.css';
 
 class App extends React.Component {
@@ -62,6 +63,12 @@ class App extends React.Component {
               path="/About"
               element={
                 <About />
+              }>
+            </Route>
+            <Route
+              path="/Docs"
+              element={
+                <Docs />
               }>
             </Route>
           </Routes>

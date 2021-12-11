@@ -13,7 +13,7 @@ import Avatar from '@mui/material/Avatar';
 import { Link } from 'react-router-dom';
 import logo from '../static/images/avatar/logo.jpg'
 
-const pages = ['Home','About'];
+const pages = ['Home','About','Docs'];
 
 class ResponsiveAppBar extends React.Component {
     state = {
