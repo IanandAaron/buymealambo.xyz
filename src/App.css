@@ -1,3 +1,7 @@
 .App {
   text-align: center;
 }
+
+.CodeBlock {
+  font-family: "Fira Code", monospace;
+}
