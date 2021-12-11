@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container,Grid,TextField } from '@mui/material';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import GenerateButton from './GenerateButton';
+import ReactPicker from './Picker'
 
 
 class Home extends React.Component {
@@ -12,6 +12,7 @@ class Home extends React.Component {
     handleChange = (e) => this.setState({
 		buttonText: e.target.value
 	})
+    
 
     render() {
         return (
@@ -20,7 +21,7 @@ class Home extends React.Component {
                     <Container maxWidth="sm">
                     <Grid container spacing={1} alignItems="center" style={{ minHeight: '100vh' }}>
                         <Grid item xs={2}>
-                        <AccountBalanceWalletIcon />
+      <ReactPicker />
                         </Grid>
                         <Grid item xs={5}>
                         <TextField
