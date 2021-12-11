@@ -15,14 +15,6 @@ class Home extends React.Component {
 	})
     
 
-
-    // _onPickerButton = () => {
-    //     const currentState = this.state.showPicker
-    //     this.setState({
-    //         showPicker : !currentState
-    //     });
-    // }
-
     render() {
         return (
             <div className="Home">
