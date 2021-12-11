@@ -27,7 +27,7 @@ class Home extends React.Component {
                             id="filled-basic"
                             label="Button Text"
                             variant="filled"
-                            onChange={this.props.handleChange}
+                            onChange={this.handleChange}
                         />
                         </Grid>
                         <Grid item xs={5}>
