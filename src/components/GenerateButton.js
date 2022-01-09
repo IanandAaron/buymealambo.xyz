@@ -20,7 +20,7 @@ function GenerateButton(props) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const code = <script src="https://cdn.jsdelivr.net/gh/isurewould/phantom-wallet-button@main/main.js" buttontext={props.buttonText}></script>
+    const code = <script src="https://cdn.jsdelivr.net/gh/isurewould/phantom-wallet-button@main/main.js" id="solButton" buttontext={props.buttonText} toaddress={props.toAddress} solamount={props.solAmount}></script>
 
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
