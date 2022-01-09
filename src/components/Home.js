@@ -1,4 +1,6 @@
 import React from "react";
+import { Helmet } from "react-helmet";
+
 import {
   Container,
   TextField,
@@ -14,7 +16,7 @@ const style = {
   width: {
     xs: 300, // theme.breakpoints.up('xs')
   },
-}
+};
 
 class Home extends React.Component {
   constructor(props) {
@@ -56,7 +58,7 @@ class Home extends React.Component {
       <div className="Home">
         <div className="CreateButton" ref={(el) => (this.div = el)}>
           <Container maxWidth="md">
-            <Stack 
+            <Stack
               direction="column"
               spacing={2}
               justifyContent="center"
@@ -97,9 +99,7 @@ class Home extends React.Component {
                 }}
                 onChange={this.handleSolAmountChange}
               />
-              <FormControl
-                sx={style}
-              >
+              <FormControl sx={style}>
                 <InputLabel id="network-select-label">Network</InputLabel>
                 <Select
                   labelId="network-select-label"
@@ -120,6 +120,20 @@ class Home extends React.Component {
                 solAmount={this.state.solAmount}
               />
             </Stack>
+            <div>
+              <Helmet>
+                <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+                <script
+                  style="text-align: center"
+                  src="https://cdn.jsdelivr.net/gh/IanandAaron/phantom-wallet-button@latest/main.js"
+                  id="solButton"
+                  button-text="Support us by donating 5$ in Sol"
+                  network="devnet"
+                  destination-address="9fuYBoRvgptU4fVZ8ZqvWTTc6oC68P4tjuSA2ySzn6Nv"
+                  sol-amount="0.03510496384188724"
+                ></script>
+              </Helmet>
+            </div>
           </Container>
         </div>
       </div>
