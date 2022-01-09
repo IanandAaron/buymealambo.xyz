@@ -19,7 +19,7 @@ class Home extends React.Component {
       network: "",
       solAmount: "",
       destinationAddress: "",
-      styling: "",
+      buttonStyling: "",
     };
   }
 
@@ -49,7 +49,7 @@ class Home extends React.Component {
 
   handleStylingChange = (e) => {
     this.setState({
-      styling: e.target.value,
+      buttonStyling: e.target.value,
     });
   };
 
@@ -110,7 +110,7 @@ class Home extends React.Component {
                 network={this.state.network}
                 destinationAddress={this.state.destinationAddress}
                 solAmount={this.state.solAmount}
-                styling={this.state.styling}
+                buttonStyling={this.state.buttonStyling}
               />
             </Stack>
           </Container>

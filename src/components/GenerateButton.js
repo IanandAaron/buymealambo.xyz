@@ -37,7 +37,7 @@ function GenerateButton(props) {
         network={props.network}
         destination-address={props.destinationAddress}
         sol-amount={props.solAmount}
-        styling={props.styling}
+        button-styling={props.buttonStyling}
       ></script>
     </>
   );
