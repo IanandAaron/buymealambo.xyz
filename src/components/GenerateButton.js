@@ -41,9 +41,6 @@ function GenerateButton(props) {
       ></script>
     </>
   );
-  const solanaCode = (
-    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
-  );
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
