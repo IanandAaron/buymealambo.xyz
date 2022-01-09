@@ -12,11 +12,7 @@ import GenerateButton from "./GenerateButton";
 
 const style = {
   width: {
-    xs: 100, // theme.breakpoints.up('xs')
-    sm: 200, // theme.breakpoints.up('sm')
-    md: 300, // theme.breakpoints.up('md')
-    lg: 400, // theme.breakpoints.up('lg')
-    xl: 500, // theme.breakpoints.up('xl')
+    xs: 300, // theme.breakpoints.up('xs')
   },
 }
 
