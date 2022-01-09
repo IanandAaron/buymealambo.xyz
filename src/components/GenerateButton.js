@@ -16,7 +16,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "50%",
+  width: "60%",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -27,19 +27,16 @@ function GenerateButton(props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const code = (
-    <>
-      <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
-      <script
-        src="https://cdn.jsdelivr.net/gh/IanandAaron/phantom-wallet-button@latest/main.js"
-        id="solButton"
-        button-text={props.buttonText}
-        network={props.network}
-        destination-address={props.destinationAddress}
-        sol-amount={props.solAmount}
-      ></script>
-    </>
-  );
+  const code = `// Phantom Wallet Button
+<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/gh/IanandAaron/phantom-wallet-button@latest/main.js"
+  id="solButton"
+  button-text=${props.buttonText}
+  network=${props.network}
+  destination-address=${props.destinationAddress}
+  sol-amount=${props.solAmount}
+></script>`;
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -73,12 +70,10 @@ function GenerateButton(props) {
                 borderRadius: '10px',
                 boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
               }}
-              text={ReactDOMServer.renderToStaticMarkup(code)}
+              text={code}
               language={"html"}
-              showLineNumbers={false}
               theme={nord}
               wrapLongLines={true}
-              codeBlock={false}
             />
           </div>
         </Box>
