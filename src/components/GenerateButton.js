@@ -27,20 +27,15 @@ function GenerateButton(props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const code = (
-    <>
-      <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
-      <script
-        src="https://cdn.jsdelivr.net/gh/IanandAaron/phantom-wallet-button@main/main.js"
-        id="solButton"
-        button-text={props.buttonText}
-        network={props.network}
-        destination-address={props.destinationAddress}
-        sol-amount={props.solAmount}
-        button-styling={props.buttonStyling}
-      ></script>
-    </>
-  );
+  const code = <script
+    src="https://cdn.jsdelivr.net/gh/IanandAaron/phantom-wallet-button@main/main.js"
+    id="solButton"
+    button-text={props.buttonText}
+    network={props.network}
+    destination-address={props.destinationAddress}
+    sol-amount={props.solAmount}
+    button-styling={props.buttonStyling}
+    ></script>
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -73,8 +68,7 @@ function GenerateButton(props) {
               language={"html"}
               showLineNumbers={false}
               theme={dracula}
-              wrapLines={true}
-              codeBlock
+              wrapLongLines
             />
           </div>
         </Box>
