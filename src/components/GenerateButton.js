@@ -9,7 +9,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import CachedIcon from "@mui/icons-material/Cached";
-import { CopyBlock, dracula } from "react-code-blocks";
+import { CopyBlock, nord } from "react-code-blocks";
 
 const style = {
   position: "absolute",
@@ -68,11 +68,17 @@ function GenerateButton(props) {
           </Typography>
           <div className="CodeBlock">
             <CopyBlock
+             customStyle={{
+                overflowY: 'scroll',
+                borderRadius: '10px',
+                boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
+              }}
               text={ReactDOMServer.renderToStaticMarkup(code)}
               language={"html"}
               showLineNumbers={false}
-              theme={dracula}
-              wrapLongLines
+              theme={nord}
+              wrapLongLines={true}
+              codeBlock={false}
             />
           </div>
         </Box>
