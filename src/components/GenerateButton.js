@@ -28,14 +28,20 @@ function GenerateButton(props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const code = (
-    <script
-      src="https://cdn.jsdelivr.net/gh/IanandAaron/phantom-wallet-button@main/main.js"
-      id="solButton"
-      button-text={props.buttonText}
-      network={props.network}
-      destination-address={props.destinationAddress}
-      sol-amount={props.solAmount}
-    ></script>
+    <>
+      <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/gh/IanandAaron/phantom-wallet-button@main/main.js"
+        id="solButton"
+        button-text={props.buttonText}
+        network={props.network}
+        destination-address={props.destinationAddress}
+        sol-amount={props.solAmount}
+      ></script>
+    </>
+  );
+  const solanaCode = (
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
   );
 
   const theme = useTheme();
@@ -61,12 +67,12 @@ function GenerateButton(props) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Javascript Snippet
+            HTML Snippet
           </Typography>
           <div className="CodeBlock">
             <CopyBlock
               text={ReactDOMServer.renderToStaticMarkup(code)}
-              language={"javascript"}
+              language={"html"}
               showLineNumbers={false}
               theme={dracula}
               wrapLines={true}
