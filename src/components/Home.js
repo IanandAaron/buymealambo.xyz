@@ -18,7 +18,6 @@ class Home extends React.Component {
       network: "",
       solAmount: "",
       destinationAddress: "",
-      buttonStyling: "",
     };
   }
 
@@ -43,12 +42,6 @@ class Home extends React.Component {
   handleNetworkChange = (e) => {
     this.setState({
       network: e.target.value,
-    });
-  };
-
-  handleStylingChange = (e) => {
-    this.setState({
-      buttonStyling: e.target.value,
     });
   };
 
@@ -82,14 +75,6 @@ class Home extends React.Component {
                 size="small"
                 onChange={this.handleSolAmountChange}
               />
-              <TextField
-                fullWidth
-                id="filled-basic"
-                label="Styling"
-                variant="filled"
-                size="small"
-                onChange={this.handleStylingChange}
-              />
               <FormControl fullWidth>
                 <InputLabel id="network-select-label">Network</InputLabel>
                 <Select
@@ -109,7 +94,6 @@ class Home extends React.Component {
                 network={this.state.network}
                 destinationAddress={this.state.destinationAddress}
                 solAmount={this.state.solAmount}
-                buttonStyling={this.state.buttonStyling}
               />
             </Stack>
           </Container>
