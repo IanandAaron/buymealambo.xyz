@@ -10,6 +10,16 @@ import {
 } from "@mui/material";
 import GenerateButton from "./GenerateButton";
 
+const style = {
+  width: {
+    xs: 100, // theme.breakpoints.up('xs')
+    sm: 200, // theme.breakpoints.up('sm')
+    md: 300, // theme.breakpoints.up('md')
+    lg: 400, // theme.breakpoints.up('lg')
+    xl: 500, // theme.breakpoints.up('xl')
+  },
+}
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -50,32 +60,50 @@ class Home extends React.Component {
       <div className="Home">
         <div className="CreateButton" ref={(el) => (this.div = el)}>
           <Container maxWidth="md">
-            <Stack spacing={2} alignItems="center" padding={20}>
+            <Stack 
+              direction="column"
+              spacing={2}
+              justifyContent="center"
+              alignItems="center"
+              padding={20}
+            >
               <TextField
-                fullWidth
+                sx={style}
                 id="filled-basic"
                 label="Button Text"
                 variant="filled"
                 size="small"
+                InputLabelProps={{
+                  shrink: true,
+                }}
                 onChange={this.handleButtonChange}
               />
               <TextField
-                fullWidth
+                sx={style}
                 id="filled-basic"
                 label="Destination Wallet Address"
                 variant="filled"
                 size="small"
+                InputLabelProps={{
+                  shrink: true,
+                }}
                 onChange={this.handleDestinationChange}
               />
               <TextField
-                fullWidth
+                sx={style}
                 id="filled-basic"
                 label="Sol Amount"
+                type="number"
                 variant="filled"
                 size="small"
+                InputLabelProps={{
+                  shrink: true,
+                }}
                 onChange={this.handleSolAmountChange}
               />
-              <FormControl fullWidth>
+              <FormControl
+                sx={style}
+              >
                 <InputLabel id="network-select-label">Network</InputLabel>
                 <Select
                   labelId="network-select-label"
