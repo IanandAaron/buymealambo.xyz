@@ -31,7 +31,7 @@ function GenerateButton(props) {
     <>
       <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
       <script
-        src="https://cdn.jsdelivr.net/gh/IanandAaron/phantom-wallet-button@main/main.js"
+        src="https://cdn.jsdelivr.net/gh/IanandAaron/phantom-wallet-button@latest/main.js"
         id="solButton"
         button-text={props.buttonText}
         network={props.network}
