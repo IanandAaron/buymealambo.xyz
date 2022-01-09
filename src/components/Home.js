@@ -55,6 +55,7 @@ class Home extends React.Component {
                 id="filled-basic"
                 label="Button Text"
                 variant="filled"
+                size="small"
                 onChange={this.handleButtonChange}
               />
               <TextField
@@ -62,6 +63,7 @@ class Home extends React.Component {
                 id="filled-basic"
                 label="Destination Wallet Address"
                 variant="filled"
+                size="small"
                 onChange={this.handleDestinationChange}
               />
               <TextField
@@ -69,6 +71,7 @@ class Home extends React.Component {
                 id="filled-basic"
                 label="Sol Amount"
                 variant="filled"
+                size="small"
                 onChange={this.handleSolAmountChange}
               />
               <FormControl fullWidth>
